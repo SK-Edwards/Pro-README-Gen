@@ -30,7 +30,7 @@ This CLI application was designed to dynamically generate a professinal README.m
  
  The users responses to the prompted questions will be aggregated and append to the README.md file generated.
 
-Step 1: https://github.com/SK-Edwards/Pro-README-Gen/blob/main/Develop/images/Screenshot%202023-04-29%20183303.png
+![Step 1:](https://github.com/SK-Edwards/Pro-README-Gen/blob/main/Develop/images/Screenshot%202023-04-29%20183303.png)
 
 Step 2: https://github.com/SK-Edwards/Pro-README-Gen/blob/main/Develop/images/Screenshot%202023-04-29%20183411.png
 
