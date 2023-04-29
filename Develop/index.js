@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 // TODO: Create an array of questions for user inputjs
 
 const questions = [
@@ -12,7 +12,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Please providea brief description of your project.',
+        message: 'Please provide a brief description of your project.',
         name: 'Description',
         validate: (value) => {if(value){return true} else { return 'Value Required'}}
     },
@@ -41,22 +41,20 @@ const questions = [
         validate: (value) => {if(value){return true} else { return 'Value Required'}}
     },
     {
-        type: 'checkbox',
+        type: 'list',
         message: 'What type of license do you have for this project?',
         name: 'License',
-        choices: ['MIT License','Apache License 2.0','GNU GPLv3','BSD 2-Clause License','BSD 3-Clause License',],
+        choices: ['The MIT License','Apache License 2.0','GNU GPLv3','BSD 2-Clause License','BSD 3-Clause License', 'Eclipse Public License 1.0', 'Mozilla Public License 2.0'],
         validate: (value) => {if(value){return true} else { return 'Value Required'}}
     }
     
     
-    ]
-
-  
+];
    
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
 
-    fs.writeFile(fileName, generateMarkdown(data), function (err) {
+    fs.writeFile(fileName,(data), function (err) {
         if (err) {
             return console.log(err);
         }})
@@ -68,9 +66,8 @@ function init() {
     inquirer.prompt(questions).then((data) => {
         console.log(JSON.stringify(data, null, " "));
         
-        
-        data.getLicense = getLicense(data.License);
-        writeToFile("./README.md", data);
+    
+        writeToFile("./README.md", generateMarkdown({...data}));
 
 })}
 
