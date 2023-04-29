@@ -12,7 +12,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Please providea brief description of your project.',
+        message: 'Please provide a brief description of your project.',
         name: 'Description',
         validate: (value) => {if(value){return true} else { return 'Value Required'}}
     },
@@ -44,7 +44,7 @@ const questions = [
         type: 'list',
         message: 'What type of license do you have for this project?',
         name: 'License',
-        choices: ['MIT License','Apache License 2.0','GNU GPLv3','BSD 2-Clause License','BSD 3-Clause License'],
+        choices: ['The MIT License','Apache License 2.0','GNU GPLv3','BSD 2-Clause License','BSD 3-Clause License', 'Eclipse Public License 1.0', 'Mozilla Public License 2.0'],
         validate: (value) => {if(value){return true} else { return 'Value Required'}}
     }
     
