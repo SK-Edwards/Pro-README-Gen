@@ -67,7 +67,7 @@ function init() {
         console.log(JSON.stringify(data, null, " "));
         
     
-        writeToFile("./README.md", generateMarkdown({...data}).trim());
+        writeToFile("./README.md", generateMarkdown({...data}));
 
 })}
 
